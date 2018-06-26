@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //return View('home');
+        return redirect()->route('movies.index');
     }
 }
