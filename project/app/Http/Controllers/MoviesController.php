@@ -35,9 +35,10 @@ class MoviesController extends Controller
 }
 //dd($adminemail);
 
-        if($adminemail=="okellojoelacaye@gmail.com")
-        $movies = DB::table('movies2')->where('email', '=',$adminemail)->get()->toArray();
-        $movies = DB::table('movies2')->get()->toArray();
+         if($adminemail=="okellojoelacaye@gmail.com")
+                    {$movies = DB::table('movies2')->get()->toArray();}
+                else
+        {$movies = DB::table('movies2')->where('email', '=',$adminemail)->get()->toArray();}
         //$movies = movies::all();
         //dd($movies);
         
@@ -61,9 +62,10 @@ class MoviesController extends Controller
 }
 
 
- if($adminemail=="okellojoelacaye@gmail.com")
-        $movies = DB::table('movies2')->where('email', '=',$adminemail)->get()->toArray();
-        $movies = DB::table('movies2')->get()->toArray();;
+   if($adminemail=="okellojoelacaye@gmail.com")
+                    {$movies = DB::table('movies2')->get()->toArray();}
+                else
+        {$movies = DB::table('movies2')->where('email', '=',$adminemail)->get()->toArray();}
 
         return view('movies',compact('movies','movie','id'));
     }
@@ -130,8 +132,10 @@ class MoviesController extends Controller
 
         $movie = movies::find($id);
          if($adminemail=="okellojoelacaye@gmail.com")
-        $movies = DB::table('movies2')->where('email', '=',$adminemail)->get()->toArray();
-        $movies = DB::table('movies2')->get()->toArray();
+                    {$movies = DB::table('movies2')->get()->toArray();}
+                else
+        {$movies = DB::table('movies2')->where('email', '=',$adminemail)->get()->toArray();}
+
         return view('movies',compact('movie','movies','id'));
     }
 
